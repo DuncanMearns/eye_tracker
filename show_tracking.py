@@ -1,11 +1,8 @@
-import pickle
 from matplotlib import pyplot as plt
-from track_video import output_path
+from eye_tracking.io import read_eye_tracking
 
-with open(output_path, "rb") as f:
-    tracking = pickle.load(f)
-
-orientation, left, right = zip(*tracking)
-plt.plot(left)
-plt.plot(right)
-plt.show()
+if __name__ == "__main__":
+    tracking = read_eye_tracking(r"data/example_tracked.npy")
+    plt.plot(tracking["left_angle"])
+    plt.plot(tracking["right_angle"])
+    plt.show()
