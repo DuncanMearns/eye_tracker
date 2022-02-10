@@ -1,0 +1,8 @@
+name: eye_tracker
+channels:
+  - conda-forge
+dependencies:
+  numpy
+  opencv
+  matplotlib
+  scipy
